@@ -1,10 +1,9 @@
 class Solution:
     def alternatingSum(self, nums: List[int]) -> int:
-        even = 0
-        odd = 0
+        x = 0
         for i in range(len(nums)):
             if i % 2 == 0:
-                even += nums[i]
+                x += nums[i]
             else:
-                odd += nums[i]
-        return even - odd
+                x -= nums[i]
+        return x
