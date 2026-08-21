@@ -1,9 +1,11 @@
 class Solution:
     def minimumAverage(self, nums: List[int]) -> float:
-        averages = []
-        li = sorted(nums)
-        x = len(li)
-        for i in range(x//2):
-            averages.append((li[i]+li[x-1-i])/2)
+        avg = []
+        nums.sort()
+        i,j = 0, len(nums) - 1
+        while i<j:
+            avg.append(((nums[i] + nums[j])/2))
+            i += 1
+            j-= 1
 
-        return min(averages)
+        return min(avg)
