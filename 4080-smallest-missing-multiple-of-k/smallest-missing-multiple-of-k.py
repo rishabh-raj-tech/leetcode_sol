@@ -1,8 +1,7 @@
 class Solution:
     def missingMultiple(self, nums: List[int], k: int) -> int:
+        s = set(nums)
         score = k
-        n = len(nums)
-        for i in range(n):
-            if score in nums:
-                score += k
+        while score in s:
+            score += k
         return score
