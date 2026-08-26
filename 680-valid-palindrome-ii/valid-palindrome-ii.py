@@ -1,14 +1,21 @@
 class Solution:
     def validPalindrome(self, s: str) -> bool:
-        l, r = 0, len(s) - 1
+        i, j = 0, len(s) - 1
+        b = True
+        while i < j:
+            if s[i] != s[j]:
+                b = False
+                break
+            i += 1
+            j -= 1
+        if b == True:
+            return True
+        def check(i, j):
+            while i < j:
+                if s[i] != s[j]:
+                    return False
+                i += 1
+                j -= 1
+            return True
+        return check(i + 1, j) or check(i, j - 1)
         
-        while l < r:
-            if s[l] == s[r]:
-                l += 1
-                r -= 1
-            else:
-                skip_l = s[l + 1 : r + 1]
-                skip_r = s[l : r]
-                return skip_l == skip_l[::-1] or skip_r == skip_r[::-1]
-                
-        return True
