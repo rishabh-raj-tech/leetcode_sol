@@ -8,5 +8,5 @@ class Solution:
             else:
                 ans = max(ans, cnt)
                 cnt = 0
-            ans = max(ans, cnt)
+        ans = max(ans, cnt)
         return ans
